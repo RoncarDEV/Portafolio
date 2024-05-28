@@ -1,0 +1,44 @@
+.btn__fijo {
+  display: none;
+  width: 90px;
+  height: 90px;
+  right: 30px;
+  bottom: 30px;
+  position: fixed;
+  border-radius: 50%;
+  background-color: #e4e4e4;
+  transition:background-color .5s ease-in;
+  cursor: pointer;
+  overflow: hidden;
+  z-index:1000 ;
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition-delay: 1s;
+    .btn__iconos {
+      animation: botonfijo 1.8s linear infinite;
+      width: 35px;
+      height: 35px;
+    }
+  }
+ 
+}
+
+.boton-dark{
+  background-color: #434343;
+}
+
+@keyframes botonfijo {
+  0% {
+    transform: translateY(75px);
+  }
+
+  100% {
+    transform: translateY(-75px);
+  }
+}

@@ -1,0 +1,190 @@
+.seccion__proyectos{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    .contend__titulo{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        .titulo{
+            font-size: 45px;
+            font-weight: 500;
+            padding:50px 0px;
+        }
+    }
+    .contend__cards-proyectos{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+        gap: 45px;
+        padding-top: 90px;
+        justify-items: center;
+        .card{
+            @include caja_flex(flex,center,center);
+            cursor: pointer;
+            position: relative;
+            flex-direction: column;
+            box-shadow: 0px 0px 5px 0px;
+            width: 320px;
+            height: 250px;
+            border-radius: 15px;
+            border:solid white 2px;
+            overflow: hidden;
+            .contend__img{
+                @include caja_flex(flex,center,center);
+                height: 100%;
+                width: 100%;
+                img{
+                    width:100%;
+                    height: 100%;
+                    object-fit:cover;
+                    border-radius: 10px;
+                }
+            }
+            
+            .contenido{
+                @include caja_flex(flex,center,center);
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                bottom: -500px;
+                flex-direction:column;
+                backdrop-filter: blur(10px);
+                transition:bottom .5s ease-in-out;
+                background-color: rgba(70, 70, 70, 0.81);
+                a{
+                    text-decoration: none;
+                    font-size: 30px;
+                    color: #ffff;
+                    transition:color .5s ease;
+                    &:hover{
+                        color:$clr-light-green;
+                    }
+                }
+                .leyenda__card{
+                    @include caja_flex(flex,center,center);
+                }
+                .iconos__card{
+                    @include caja_flex(flex,center,center);
+                }
+                .icon svg{
+                  fill: #ffffff;
+                  width: 30px;
+                  height: 30px;
+                  margin-top: 20px;
+                  
+                }
+            }
+            &:hover > .contenido{
+                bottom: 0;
+            }
+        }
+    }
+}
+
+#encriptador{
+    .contend__img{
+        img{
+            object-fit:contain;
+        }
+    }
+}
+
+// proyects contend
+.about__proyect {
+    width: 100%;
+    @include caja_flex(flex, center, center);
+    flex-direction: column;
+    padding-top: 80px;
+    // caja de contenido de texto
+    .about__contenido__proyect {
+      @include caja_flex(flex, flex-start, center);
+      width: 100%;
+      height: 100%;
+      padding: 25px 0px 0px 0px;
+      // imagen del perfil
+      .about__imagen__proyect {
+        @include caja_flex(flex, center, center);
+        flex-direction: column;
+        padding: 0px 35px;
+        position: relative;
+        order: 1;
+        .imagen {
+          width: 350px;
+          object-fit: cover;
+        }
+        span {
+          @include caja_flex(flex, center, center);
+          position: absolute;
+          width: 80px;
+          left:150px;
+          bottom: 30px;
+          color: #bbbbbb;
+          border: solid #777777 2px;
+          border-radius: 10px;
+          font-weight: 600;
+          padding: 20px 10px;
+          backdrop-filter: blur(10px);
+        }
+      }
+      // caja de texto
+      .about__texto__proyect {
+        @include caja_flex(flex, flex-start, center);
+        width: 40%;
+        height: 100%;
+        text-align: start;
+        flex-direction: column;
+        .texto {
+          text-align: start;
+          color: #777777;
+          width: 90%;
+          line-height: 25px;
+        }
+        // boton para descargar cv
+        .about__btn__proyect {
+          background-color: $clr-light-green;
+          border-radius: 7px;
+          border: none;
+          padding: 15px 30px;
+          margin: 25px 0px;
+          position: relative;
+          cursor: pointer;
+          position: relative;
+          overflow: hidden;
+          transition: box-shadow 0.3s ease-in-out;
+          &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: -150px;
+            background-color: $clr-dark-pastel-green;
+            transition: top 0.5s ease-in-out;
+          }
+          &:hover::after {
+            top: 0;
+          }
+          span {
+            width: 100%;
+            position: relative;
+            z-index: 2;
+            a {
+              color: #ffffff;
+              text-decoration: none;
+              font-size: $texto;
+              font-weight: 600;
+              position: relative;
+            }
+          }
+          &:hover {
+            box-shadow: 0px 0px 15px 0px $clr-malachite,
+              0px 0px 25px 0px $clr-malachite;
+            background-color: $clr-light-green;
+          }
+        }
+      }
+    }
+  }
